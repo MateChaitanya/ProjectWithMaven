@@ -20,7 +20,8 @@ public class App
         cfg.configure("hibernate.cfg.xml");
         SessionFactory factory = cfg.buildSessionFactory();
         
-        // Create a student object
+        // Create a student object 
+        //create a student object
         Student st = new Student();
         st.setId(104);
         st.setName("Sameer");
