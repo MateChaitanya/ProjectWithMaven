@@ -40,13 +40,9 @@ public class MapDemo {
         Session session = factory.openSession();
         Transaction tx = session.beginTransaction();
 
-        // Save questions first
+        // Save questions (cascades to answers)
         session.save(q1);
         session.save(q2);
-
-        // Save answers
-        session.save(answer1);
-        session.save(answer2);
 
         tx.commit();
         session.close();
