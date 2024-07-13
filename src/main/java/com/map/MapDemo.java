@@ -21,6 +21,7 @@ public class MapDemo {
         Answer answer1 = new Answer();
         answer1.setAnswerId(343);
         answer1.setAnswer("Java is a programming language");
+        answer1.setQuestion(q1);
         q1.setAnswer(answer1);
 
         // Creating another question
@@ -32,19 +33,20 @@ public class MapDemo {
         Answer answer2 = new Answer();
         answer2.setAnswerId(344);
         answer2.setAnswer("API to work with objects in java");
+        answer2.setQuestion(q2);
         q2.setAnswer(answer2);
 
         // Session
         Session session = factory.openSession();
         Transaction tx = session.beginTransaction();
 
-        // Save answers first
-        session.save(answer1);
-        session.save(answer2);
-
-        // Save questions
+        // Save questions first
         session.save(q1);
         session.save(q2);
+
+        // Save answers
+        session.save(answer1);
+        session.save(answer2);
 
         tx.commit();
         session.close();

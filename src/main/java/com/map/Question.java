@@ -2,6 +2,7 @@ package com.map;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -11,6 +12,7 @@ public class Question {
     private String question;
     
     @OneToOne
+    @JoinColumn(name="a_id")
     private Answer answer;
 
     // Getters and setters...
