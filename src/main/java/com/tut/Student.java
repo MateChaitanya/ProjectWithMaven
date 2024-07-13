@@ -1,28 +1,27 @@
 package com.tut;
 
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
-//@Table(name = "students")  // This annotation is optional, but it specifies the table name in the database
 public class Student {
 
     @Id
     private int id;
     private String name;
     private String city;
+    
+    @Embedded
+    private Certificate certi;
 
     public Student(int id, String name, String city) {
-        super();
         this.id = id;
         this.name = name;
         this.city = city;
     }
 
-    public Student() {
-        super();
-    }
+    public Student() {}
 
     public int getId() {
         return id;
@@ -46,6 +45,14 @@ public class Student {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public Certificate getCerti() {
+        return certi;
+    }
+
+    public void setCerti(Certificate certi) {
+        this.certi = certi;
     }
 
     @Override
