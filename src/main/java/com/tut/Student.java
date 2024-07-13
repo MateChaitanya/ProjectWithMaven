@@ -5,7 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "students")  // This annotation is optional, but it specifies the table name in the database
+//@Table(name = "students")  // This annotation is optional, but it specifies the table name in the database
 public class Student {
 
     @Id
