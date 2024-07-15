@@ -19,6 +19,8 @@
 
         <!-- Show SQL queries in console -->
         <property name="hibernate.show_sql">true</property>
+        <property name="cache.use_second_Level_cache">true</property>
+        <property name="cache.region.factory_class">.org.hibernate.cache.ehcache.internal.EhCacheRegionFactory</property>
 
         <!-- Entity mappings -->
         <mapping class="com.tut.Student"/>
