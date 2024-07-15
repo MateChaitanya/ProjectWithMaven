@@ -19,7 +19,7 @@ public class HQLPegination {
 		//Implementing pegination using hibernate 
 		
 		query.setFirstResult(0);   //Starting index
-		query.setMaxResults(5);     // ending index 
+		query.setMaxResults(2);     // ending index 
 		
 		
 		List<Student>list = query.list();
