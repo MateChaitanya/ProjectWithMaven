@@ -1,28 +1,32 @@
 package com.map;
 
-import java.util.List;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-
+import java.util.List;
 
 @Entity
 public class Question {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-generate primary key
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int questionId;
 
     private String question;
 
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
     private List<Answer> answers;
+
+    // Default constructor
+    public Question() {}
+
+    // Constructor with question parameter
+    public Question(String question) {
+        this.question = question;
+    }
 
     // Getters and setters
     public int getQuestionId() {
